@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nick = findViewById(R.id.nick);
         pass= findViewById(R.id.pass);
 
+        /*
+
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+        */
 
     }
 
@@ -80,8 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d("LOG WS", response);
                         try {
                             JSONObject responseJson = new JSONObject(response);
-                            Snackbar.make(MainActivity.this.getCurrentFocus(), responseJson.getString("info"), Snackbar.LENGTH_SHORT)
-                                    .show();
+                            //Snackbar.make(MainActivity.this.getCurrentFocus(), responseJson.getString("info"), Snackbar.LENGTH_SHORT)
+                              //      .show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

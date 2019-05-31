@@ -313,7 +313,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/actividadesMes"
+                android:background="@drawable/actividadesmes"
                 android:padding="8dp">
 
                 <TextView
