@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".DashboardActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,10 +33,12 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tvDash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_regular"
         android:text="Mas servicios del sistema de Coach Vocacinal"
+        android:transitionName="tvDash"
         android:textColor="#5E5E5E"
         android:textSize="18dp" />
 

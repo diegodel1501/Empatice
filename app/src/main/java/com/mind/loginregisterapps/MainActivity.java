@@ -2,47 +2,31 @@ package com.mind.loginregisterapps;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ImageButton btRegister;
     private TextView tvLogin;
+    private TextView tvDash;
 
     private EditText nick;
     private EditText pass;
-/*
-    @Override
+
+  /*  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btRegister  = findViewById(R.id.btRegister);
-        tvLogin     = findViewById(R.id.tvLogin);
-        btRegister.setOnClickListener(this);
+
     }*/
 
     @Override
@@ -50,8 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btRegister  = findViewById(R.id.btRegister);
+        tvLogin     = findViewById(R.id.tvLogin);
+        tvDash     = findViewById(R.id.tvDash);
 
-
+        btRegister.setOnClickListener(this);
+        tvLogin.setOnClickListener(this);
         nick = findViewById(R.id.nick);
         pass= findViewById(R.id.pass);
 
@@ -70,44 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void webconexion(final String nick,final String pass) {
 
-        String WS_URL = "http://servicios.unnamed-chile.com/index.php/LOGIN_UBB";
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest request = new StringRequest(
-                Request.Method.POST,
-                WS_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("LOG WS", response);
-                        try {
-                            JSONObject responseJson = new JSONObject(response);
-                            //Snackbar.make(MainActivity.this.getCurrentFocus(), responseJson.getString("info"), Snackbar.LENGTH_SHORT)
-                              //      .show();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("LOG WS", error.toString());
-
-            }
-        }
-        ) {
-            @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("login",nick /*"test123"*/);
-                params.put("pass",pass/*"12345"*/);
-                return params;
-            }
-
-        };
-        requestQueue.add(request);
-    }
 
 
 
@@ -123,6 +74,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);
             startActivity(intent,activityOptions.toBundle());
         }
-    }
+       // Toast.makeText(MainActivity.this,nick.getText().toString(),Toast.LENGTH_SHORT).show();
+       // Toast.makeText(MainActivity.this,pass.getText().toString(),Toast.LENGTH_SHORT).show();
+        if(v==tvLogin){
 
-}
+            if( nick.getText().toString().equalsIgnoreCase("admin")&& pass.getText().toString().equals("1234") ){
+                Intent i = new Intent(this, DashboardActivity.class );
+                startActivity(i);
+
+            }  else{
+                Toast.makeText(MainActivity.this,"user or pass wrong",Toast.LENGTH_SHORT).show();
+
+            }
+        }
+
+
+        }
+
+
+
+        }
+
+
+
+

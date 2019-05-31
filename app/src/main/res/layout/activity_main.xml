@@ -26,7 +26,6 @@
         android:textSize="17sp" />
 
     <TextView
-        android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvDesc"
@@ -149,6 +148,7 @@
                 android:elevation="10dp">
 
                 <Button
+                    android:id="@+id/tvLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_ui"
