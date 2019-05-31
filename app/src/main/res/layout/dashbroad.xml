@@ -402,9 +402,13 @@
             android:layout_marginLeft="18dp"
             android:layout_weight="1"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            app:cardElevation="2dp"
+            android:id="@+id/rlprogreso">
+
+
 
             <RelativeLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/presentacion"
