@@ -41,8 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btRegister.setOnClickListener(this);
         tvLogin.setOnClickListener(this);
         nick = findViewById(R.id.nick);
-        pass= findViewById(R.id.pass);
 
+        pass= findViewById(R.id.pass);
+        nick.setText("admin");
+        pass.setText("1234");
         /*
 
         FloatingActionButton fab = findViewById(R.id.fab);

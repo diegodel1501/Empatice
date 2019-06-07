@@ -27,6 +27,12 @@
         <activity
             android:name=".ProgresoActivity"
             android:theme="@style/AppTheme.FullScreen"></activity>
+        <activity
+            android:name=".RecomendacionActivity"
+            android:theme="@style/AppTheme.FullScreen"></activity>
+        <activity
+            android:name=".TestActivity"
+            android:theme="@style/AppTheme.FullScreen"></activity>
     </application>
 
 
