@@ -9,18 +9,22 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#2655FF"
+
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_bold"
             android:text="Tu progreso con la Actividad"
-            android:backgroundTint="@color/colorWhite"
-            android:textColor="#2EFF00"
+
+            android:textColor="#26FF00"
             android:textSize="24dp" />
 
         <View
